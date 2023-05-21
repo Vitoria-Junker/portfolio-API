@@ -1,0 +1,21 @@
+import express from 'express';
+import projectsRouter from './src/routes/projects.js';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import { app } from './firebase.js'
+
+const jsonParser = bodyParser.json();
+
+const server = express();
+
+server.use(jsonParser);
+
+server.use(cors());
+
+server.use('/projects', projectsRouter);
+
+
+server.listen(3004, () => {
+  console.log('Servidor rodando na porta 3004');
+
+});
