@@ -14,8 +14,9 @@ server.use(cors());
 
 server.use('/projects', projectsRouter);
 
+const port = process.env.PORT || 3004;
 
-server.listen(3004, () => {
+server.listen(port, () => {
   console.log('Servidor rodando na porta 3004');
 
 });

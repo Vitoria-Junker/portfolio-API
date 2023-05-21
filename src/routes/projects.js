@@ -3,9 +3,7 @@ import express from 'express';
 import projectController from '../controllers/projectController.js';
 import Project from '../models/project.js';
 
-
 const projectsRouter = express.Router();
-
 
 projectsRouter.post('/new', async (req, res) => {
     
@@ -36,12 +34,8 @@ projectsRouter.post('/new', async (req, res) => {
     }
   });
 
-
-
   projectsRouter.put('/:id/update', projectController.update);
   projectsRouter.delete('/:id/delete', projectController.deleteProject);
-
-//export { projectsRouter };
 
 export default projectsRouter;
 
