@@ -1,7 +1,5 @@
 
-  
   import { getDatabase, ref, set, push, get, remove} from 'firebase/database';
-  //import Project from '../models/project.js';
   import projectSchema from '../validation/projectsValidation.js';
   import Project from '../models/project.js';
 
@@ -66,8 +64,6 @@
       return;
     }
   
-    const project = projectSnapshot.val();
-  
     try {
       const { name, link, description, img } = req.body;
       const updatedProject = new Project(name, link, description, img);
@@ -96,8 +92,6 @@
     res.status(200).json({ message: 'Projeto removido com sucesso.' });
   };
   
-
-
   export default {
     save,
     getAll,
